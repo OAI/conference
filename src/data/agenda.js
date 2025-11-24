@@ -9,15 +9,15 @@ import { asset } from "../config.js";
 export const agendaSections = [
   {
     id: "foundations",
-    title: "FOUNDATIONS",
+    title: "Foundations",
     timeRange: "08:30 — 10:40",
     items: [
       {
         id: "breakfast",
         time: "08:30",
         category: "",
-        title: "EXECUTIVE BREAKFAST",
-        badge: "INVITE ONLY",
+        title: "Executive Breakfast",
+        badge: "Invite Only",
         speakers: [],
         icon: asset("/images/break-fest.svg"),
         disableHover: true,
@@ -25,13 +25,13 @@ export const agendaSections = [
       {
         id: "1",
         time: "09:15",
-        category: "FOUNDATIONS",
-        title: "CONFERENCE WELCOME AND OPENAPI IN THE AGE OF AI",
+        category: "Foundations",
+        title: "Conference Welcome and OpenAPI in the Age of AI",
         speakers: [
           {
-            name: "ERIK WILDE",
-            job: "HEAD OF ENTERPRISE STRATEGY",
-            company: "JENTIC",
+            name: "Erik Wilde",
+            job: "Head of Enterprise Strategy",
+            company: "Jentic",
             avatar: asset("/images/speakers/Erik.jpg"),
             linkedin: "https://www.linkedin.com/in/erikwilde/",
           },
@@ -40,13 +40,13 @@ export const agendaSections = [
       {
         id: "2",
         time: "09:45",
-        category: "FOUNDATIONS",
-        title: "WHAT'S NEW IN OPENAPI 3.2",
+        category: "Foundations",
+        title: "What's New in OpenAPI 3.2",
         speakers: [
           {
-            name: "LORNA MITCHELL",
-            job: "API ARCHITECT",
-            company: "TM FORUM",
+            name: "Lorna Mitchell",
+            job: "API Architect",
+            company: "TM Forum",
             avatar: asset("/images/speakers/Lorna.jpg"),
             linkedin: "https://www.linkedin.com/in/lornajane/",
           },
@@ -55,13 +55,13 @@ export const agendaSections = [
       {
         id: "3",
         time: "10:15",
-        category: "FOUNDATIONS",
-        title: "DATA CONTRACTS: TREATING DATA AS APIS",
+        category: "Foundations",
+        title: "Data Contracts: Treating Data as APIs",
         speakers: [
           {
-            name: "DR. SIMON HARRER",
-            job: "CO-FOUNDER AND CEO",
-            company: "ENTROPY DATA",
+            name: "Dr. Simon Harrer",
+            job: "Co-Founder and CEO",
+            company: "Entropy Data",
             avatar: asset("/images/speakers/Simon.jpg"),
             linkedin: "https://www.linkedin.com/in/simonharrer/",
           },
@@ -71,20 +71,20 @@ export const agendaSections = [
   },
   {
     id: "practices",
-    title: "PRACTICES",
+    title: "Practices",
     timeRange: "11:00 — 12:55",
     items: [
       {
         id: "4",
         time: "11:00",
-        category: "PRACTICES",
+        category: "Practices",
         title:
-          "FROM ZERO TO SPEC-HERO: ELIMINATING LEAN WASTES WHEN ADOPTING OPENAPI",
+          "From Zero to Spec-Hero: Eliminating Lean Wastes When Adopting OpenAPI",
         speakers: [
           {
-            name: "MARJUKKA NIINIOJA",
-            job: "FOUNDING PARTNER",
-            company: "OSAANGO",
+            name: "Marjukka Niinioja",
+            job: "Founding Partner",
+            company: "Osaango",
             avatar: asset("/images/speakers/Marjukka.jpg"),
             linkedin: "https://www.linkedin.com/in/marjukkaniinioja/",
           },
@@ -93,13 +93,13 @@ export const agendaSections = [
       {
         id: "5",
         time: "11:30",
-        category: "PRACTICES",
+        category: "Practices",
         title:
-          "HOW THE DUTCH GOVERNMENT USES AN OPENAPI-FIRST APPROACH TO LEVERAGE DEVELOPER EXPERIENCE",
+          "How the Dutch Government Uses an OpenAPI-First Approach to Leverage Developer Experience",
         speakers: [
           {
-            name: "DIMITRI VAN HEES",
-            company: "GOVERNMENT OF THE NETHERLANDS",
+            name: "Dimitri van Hees",
+            company: "Government of the Netherlands",
             avatar: asset("/images/speakers/Dimitri.jpg"),
             linkedin: "https://www.linkedin.com/in/dimitrivanhees/",
           },
@@ -108,14 +108,14 @@ export const agendaSections = [
       {
         id: "6",
         time: "12:00",
-        category: "PRACTICES",
+        category: "Practices",
         title:
-          "FROM REST TO EVENTS: API WORKFLOW TESTING AND MOCKING WITH A SINGLE ARAZZO SPEC",
+          "From REST to Events: API Workflow Testing and Mocking with a Single Arazzo Spec",
         speakers: [
           {
-            name: "NARESH JAIN",
-            job: "FOUNDER, CEO",
-            company: "SPECMATIC",
+            name: "Naresh Jain",
+            job: "Founder, CEO",
+            company: "Specmatic",
             avatar: asset("/images/speakers/Naresh.jpg"),
             linkedin: "https://www.linkedin.com/in/nareshjain/",
           },
@@ -125,13 +125,13 @@ export const agendaSections = [
       {
         id: "7",
         time: "12:30",
-        category: "PRACTICES",
-        title: "YOU MAY HAVE OPENAPI, BUT IS IT AI-READY?",
+        category: "Practices",
+        title: "You May Have OpenAPI, but Is It AI-Ready?",
         speakers: [
           {
-            name: "FRANK KILCOMMINS",
-            job: "HEAD OF ENTERPRISE ARCHITECTURE",
-            company: "JENTIC",
+            name: "Frank Kilcommins",
+            job: "Head of Enterprise Architecture",
+            company: "Jentic",
             avatar: asset("/images/speakers/Frank.jpg"),
             linkedin: "https://www.linkedin.com/in/frank-kilcommins",
           },
@@ -141,19 +141,19 @@ export const agendaSections = [
   },
   {
     id: "applications",
-    title: "APPLICATIONS",
+    title: "Applications",
     timeRange: "14:00 — 15:25",
     items: [
       {
         id: "8",
         time: "14:00",
-        category: "APPLICATIONS",
-        title: "WHAT'S ALL THE FUSS ABOUT TYPESPEC?",
+        category: "Applications",
+        title: "What's All the Fuss About TypeSpec?",
         speakers: [
           {
-            name: "CHRIS WOOD",
-            job: "PRINCIPAL ARCHITECT",
-            company: "OZONE API",
+            name: "Chris Wood",
+            job: "Principal Architect",
+            company: "Ozone API",
             avatar: asset("/images/speakers/Chris.jpg"),
             linkedin: "https://www.linkedin.com/in/sensiblewood/",
           },
@@ -162,14 +162,14 @@ export const agendaSections = [
       {
         id: "9",
         time: "14:30",
-        category: "APPLICATIONS",
+        category: "Applications",
         title:
-          "CONTROL SURFACES IN OPENAPI: DESIGNING SPECS FOR TASK, PLAN, AND AGENT MODES",
+          "Control Surfaces in OpenAPI: Designing Specs for Task, Plan, and Agent Modes",
         speakers: [
           {
-            name: "MIGUEL QUINTERO",
-            job: "TECHNICAL TRAINER",
-            company: "POSTMAN",
+            name: "Miguel Quintero",
+            job: "Technical Trainer",
+            company: "Postman",
             avatar: asset("/images/speakers/Miguel.jpg"),
             linkedin: "https://www.linkedin.com/in/miguel-quintero-a558531/",
           },
@@ -178,13 +178,13 @@ export const agendaSections = [
       {
         id: "10",
         time: "15:00",
-        category: "APPLICATIONS",
-        title: "SPEC-FIRST API DESIGNS WITHOUT CODEGEN",
+        category: "Applications",
+        title: "Spec-First API Designs Without Codegen",
         speakers: [
           {
-            name: "RAHUL DÉ",
-            job: "VP, PLATFORM AND SITE RELIABILITY ENGINEERING, PUBLIC CLOUD",
-            company: "CITI",
+            name: "Rahul Dé",
+            job: "VP, Platform and Site Reliability Engineering, Public Cloud",
+            company: "Citi",
             avatar: asset("/images/speakers/Rahul.jpg"),
             linkedin: "https://www.linkedin.com/in/lispyclouds",
           },
@@ -194,19 +194,19 @@ export const agendaSections = [
   },
   {
     id: "looking-glass",
-    title: "THE LOOKING GLASS",
+    title: "The Looking Glass",
     timeRange: "15:55 — 16:50",
     items: [
       {
         id: "11",
         time: "15:55",
-        category: "THE LOOKING GLASS",
-        title: "OPENAPI AND SPRING-BOOT 4 - WHAT'S NEW?",
+        category: "The Looking Glass",
+        title: "OpenAPI and Spring-Boot 4 - What's New?",
         speakers: [
           {
-            name: "BADR NASS LAHSEN",
-            job: "LEAD CLOUD AND SECURITY ARCHITECT",
-            company: "CYBERARK",
+            name: "Badr Nass Lahsen",
+            job: "Lead Cloud and Security Architect",
+            company: "CyberArk",
             avatar: asset("/images/speakers/Badr.jpg"),
             linkedin: "https://www.linkedin.com/in/nasslahsen/",
           },
@@ -215,13 +215,13 @@ export const agendaSections = [
       {
         id: "12",
         time: "16:25",
-        category: "THE LOOKING GLASS",
-        title: "IS OPENAPI STILL RELEVANT IN THE AGE OF AI?",
+        category: "The Looking Glass",
+        title: "Is OpenAPI Still Relevant in the Age of AI?",
         speakers: [
           {
-            name: "EMMANUEL PARASKAKIS",
-            job: "FOUNDER",
-            company: "LEVEL250",
+            name: "Emmanuel Paraskakis",
+            job: "Founder",
+            company: "Level250",
             avatar: asset("/images/speakers/Emmanuel.jpg"),
             linkedin: "https://www.linkedin.com/in/emmanuelparaskakis/",
           },
