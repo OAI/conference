@@ -43,14 +43,22 @@ export class CalendarPopup {
    * Build Google Calendar URL
    */
   buildGoogleCalendarUrl() {
-    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(this.eventTitle)}&dates=${this.googleStart}/${this.googleEnd}&details=${encodeURIComponent(this.eventDescription)}&location=${encodeURIComponent(this.eventLocation)}`;
+    return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
+      this.eventTitle
+    )}&dates=${this.googleStart}/${this.googleEnd}&details=${encodeURIComponent(
+      this.eventDescription
+    )}&location=${encodeURIComponent(this.eventLocation)}`;
   }
 
   /**
    * Build Outlook URL
    */
   buildOutlookUrl() {
-    return `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(this.eventTitle)}&body=${encodeURIComponent(this.eventDescription)}&startdt=${this.startDate}&enddt=${this.endDate}&location=${encodeURIComponent(this.eventLocation)}`;
+    return `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(
+      this.eventTitle
+    )}&body=${encodeURIComponent(this.eventDescription)}&startdt=${
+      this.startDate
+    }&enddt=${this.endDate}&location=${encodeURIComponent(this.eventLocation)}`;
   }
 
   /**
@@ -178,7 +186,7 @@ END:VCALENDAR`;
             </div>
             <button
               data-close-btn
-              class="text-text-muted hover:text-text-primary transition-colors"
+              class="text-primary-gray hover:text-text-primary transition-colors"
               aria-label="Close"
             >
               <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
@@ -254,7 +262,7 @@ END:VCALENDAR`;
     const backdrop = this.container.querySelector("[data-backdrop]");
     const closeBtn = this.container.querySelector("[data-close-btn]");
     const downloadButtons = this.container.querySelectorAll(
-      "[data-download-ics], [data-download-ics-alt]",
+      "[data-download-ics], [data-download-ics-alt]"
     );
 
     backdrop.addEventListener("click", (e) => this.handleBackdropClick(e));

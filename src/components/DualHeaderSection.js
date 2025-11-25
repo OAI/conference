@@ -28,7 +28,7 @@ export class DualHeaderSection {
         : "text-text-primary";
     const subtitleColor =
       this.backgroundColor === "white"
-        ? "text-text-muted"
+        ? "text-primary-gray-on-white"
         : "text-text-secondary";
     const bgClass = this.backgroundColor === "white" ? "bg-white" : "bg-black";
 

@@ -27,7 +27,7 @@ export class CountdownTimer {
     if (diff > 0) {
       this.days = Math.floor(diff / (1000 * 60 * 60 * 24));
       this.hours = Math.floor(
-        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
+        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
       );
       this.minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((diff % (1000 * 60)) / 1000);
@@ -52,7 +52,7 @@ export class CountdownTimer {
   render() {
     return `
       <div
-        class="flex text-[11px] text-text-muted font-medium font-mono tracking-widest uppercase px-4 pt-2 tablet:px-0 items-center justify-center tablet:justify-start w-full leading-5 tablet:text-md desktop-xxl:text-[16px]"
+        class="flex text-[11px] text-primary-gray font-medium font-mono tracking-widest uppercase px-4 pt-2 tablet:px-0 items-center justify-center tablet:justify-start w-full leading-5 tablet:text-md desktop-xxl:text-[16px]"
         data-countdown
       >
         <div data-countdown-days>${this.days}</div>&nbsp;Days
@@ -61,7 +61,9 @@ export class CountdownTimer {
           alt=""
           class="inline h-2 mx-3"
         />
-        <div data-countdown-time>${this.pad(this.hours)}:${this.pad(this.minutes)}:${this.pad(this.seconds)}</div>
+        <div data-countdown-time>${this.pad(this.hours)}:${this.pad(
+      this.minutes
+    )}:${this.pad(this.seconds)}</div>
       </div>
     `;
   }
@@ -75,7 +77,9 @@ export class CountdownTimer {
 
     if (daysEl && timeEl) {
       daysEl.textContent = this.days;
-      timeEl.textContent = `${this.pad(this.hours)}:${this.pad(this.minutes)}:${this.pad(this.seconds)}`;
+      timeEl.textContent = `${this.pad(this.hours)}:${this.pad(
+        this.minutes
+      )}:${this.pad(this.seconds)}`;
     }
   }
 

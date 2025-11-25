@@ -32,155 +32,24 @@
   /* Custom Line Height */
   --line-height-tightest: 1.1;
 
+  /* Custom Font Size */
+  --text-sm: 0.8125rem; /* 13px */
+
   /* Custom Colors */
   --color-primary: #47c552;
   --color-primary-green-dark: #338a3a;
   --color-primary-green-muted: #4d7051;
+  --color-primary-gray: #a3a3a3;
+  --color-primary-gray-on-white: #5c5c5c;
   --color-bg-dark: #000000;
   --color-bg-dark-elevated: #0a0a0a;
   --color-bg-card: #1a1a1a;
   --color-bg-card-highlighted: #4ade80;
   --color-text-primary: #ffffff;
   --color-text-secondary: #ffffff7a;
-  --color-text-muted: #737373;
   --color-text-on-green: #000000;
   --color-border-primary: #4d4d4d;
-}
-
-/* ==================================================================================== */
-/* CUSTOM THEME - CSS VARIABLES                                                        */
-/* ==================================================================================== */
-
-:root {
-  /* ==================== */
-  /* Colors               */
-  /* ==================== */
-
-  --color-primary: #47c552;
-  --color-primary-green-dark: #338a3a;
-  --color-primary-green-muted: #4d7051;
-
-  --color-bg-dark: #000000;
-  --color-bg-dark-elevated: #0a0a0a;
-  --color-bg-card: #1a1a1a;
-  --color-bg-card-highlighted: #4ade80;
-
-  --color-text-primary: #ffffff;
-  --color-text-secondary: #ffffff7a;
-  --color-text-muted: #737373;
-  --color-text-on-green: #000000;
-
-  --color-border-primary: #4d4d4d;
-
-  /* ==================== */
-  /* Spacing Scale        */
-  /* ==================== */
-
-  --spacing-xs: 0.5rem; /* 8px */
-  --spacing-sm: 0.75rem; /* 12px */
-  --spacing-md: 1rem; /* 16px */
-  --spacing-lg: 1.5rem; /* 24px */
-  --spacing-xl: 2rem; /* 32px */
-  --spacing-2xl: 3rem; /* 48px */
-  --spacing-3xl: 4rem; /* 64px */
-  --spacing-4xl: 6rem; /* 96px */
-
-  /* ==================== */
-  /* Typography           */
-  /* ==================== */
-
-  /* Font Families */
-  --font-family-base: "Onest", "Helvetica", sans-serif;
-
-  /* Font Sizes */
-  --font-size-xs: 0.75rem; /* 12px */
-  --font-size-sm: 0.875rem; /* 14px */
-  --font-size-base: 1rem; /* 16px */
-  --font-size-lg: 1.125rem; /* 18px */
-  --font-size-xl: 1.25rem; /* 20px */
-  --font-size-2xl: 1.5rem; /* 24px */
-  --font-size-3xl: 2rem; /* 32px */
-  --font-size-4xl: 2.5rem; /* 40px */
-  --font-size-5xl: 4.5rem; /* 72px */
-
-  /* Font Weights */
-  --font-weight-normal: 400;
-  --font-weight-medium: 500;
-  --font-weight-semibold: 600;
-  --font-weight-bold: 700;
-
-  /* Line Heights */
-  --line-height-tight: 1.2;
-  --line-height-normal: 1.5;
-  --line-height-relaxed: 1.75;
-
-  /* ==================== */
-  /* Border Radius        */
-  /* ==================== */
-
-  --radius-sm: 0.25rem; /* 4px */
-  --radius-md: 0.5rem; /* 8px */
-  --radius-lg: 0.75rem; /* 12px */
-  --radius-xl: 1rem; /* 16px */
-  --radius-full: 9999px; /* Full circle */
-
-  /* ==================== */
-  /* Shadows              */
-  /* ==================== */
-
-  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1),
-    0 2px 4px -1px rgba(0, 0, 0, 0.06);
-  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1),
-    0 4px 6px -2px rgba(0, 0, 0, 0.05);
-  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1),
-    0 10px 10px -5px rgba(0, 0, 0, 0.04);
-
-  /* ==================== */
-  /* Transitions          */
-  /* ==================== */
-
-  --transition-fast: 150ms ease-in-out;
-  --transition-base: 200ms ease-in-out;
-  --transition-slow: 300ms ease-in-out;
-
-  /* ==================== */
-  /* Layout               */
-  /* ==================== */
-
-  --container-max-width: 1280px;
-  --container-padding: 2rem; /* 32px */
-
-  /* ==================== */
-  /* Z-index Scale        */
-  /* ==================== */
-
-  --z-base: 1;
-  --z-dropdown: 100;
-  --z-sticky: 200;
-  --z-fixed: 300;
-  --z-modal-backdrop: 400;
-  --z-modal: 500;
-  --z-popover: 600;
-  --z-tooltip: 700;
-
-  /* ==================== */
-  /* Breakpoints          */
-  /* ==================== */
-
-  /* Custom breakpoints (mobile-first) */
-  --breakpoint-mobile: 24.375rem; /* 390px */
-  --breakpoint-tablet: 60rem; /* 960px */
-  --breakpoint-desktop: 73.75rem; /* 1180px */
-  --breakpoint-desktop-xl: 108rem; /* 1728px */
-  --breakpoint-desktop-xxl: 152rem; /* 2440px */
-
-  /* Tailwind defaults */
-  --breakpoint-sm: 640px;
-  --breakpoint-md: 768px;
-  --breakpoint-lg: 1024px;
-  --breakpoint-xl: 1280px;
-  --breakpoint-2xl: 1536px;
+  --color-border-green: #47c552;
 }
 
 /* ==================================================================================== */
@@ -259,10 +128,10 @@
   }
 }
 
-/* Custom spacing utilities using CSS variables */
+/* Custom spacing utility */
 .py-spacing-md {
-  padding-top: var(--spacing-md);
-  padding-bottom: var(--spacing-md);
+  padding-top: 1rem;
+  padding-bottom: 1rem;
 }
 
 /* Scrollbar hiding */
@@ -273,24 +142,6 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
-}
-
-/* Speaker Avatar Hover Effects */
-
-/* LinkedIn icon - hidden by default */
-.linkedin-icon-overlay {
-  opacity: 0;
-  transform: scale(0);
-}
-
-/* Speaker overlay and LinkedIn icon - visible on hover */
-.speaker-avatar-link:hover .speaker-overlay {
-  opacity: 1 !important;
-}
-
-.speaker-avatar-link:hover .linkedin-icon-overlay {
-  opacity: 1 !important;
-  transform: scale(1) !important;
 }
 
 /* Force text inheritance for spans inside links/buttons */

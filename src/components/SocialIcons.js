@@ -1,7 +1,7 @@
 /**
  * SocialIcons Component
  *
- * Renders LinkedIn and YouTube social media icons
+ * Renders LinkedIn, YouTube, and Bluesky social media icons
  * Reusable in header and footer
  */
 
@@ -9,6 +9,7 @@ export class SocialIcons {
   constructor() {
     this.linkedInUrl = "https://www.linkedin.com/company/open-api-initiative/";
     this.youtubeUrl = "https://www.youtube.com/@OpenApi";
+    this.blueskyUrl = "https://bsky.app/profile/openapis.org";
   }
 
   /**
@@ -17,7 +18,7 @@ export class SocialIcons {
    */
   render() {
     return `
-      <div class="flex items-center gap-6 desktop:gap-10 w-28 h-11">
+      <div class="flex items-center gap-6 desktop:gap-10 h-11">
         <!-- LinkedIn Icon -->
         <a
           href="${this.linkedInUrl}"
@@ -71,6 +72,28 @@ export class SocialIcons {
           >
             <path
               d="M41.1643 12.3723C40.7044 10.6512 39.3491 9.29594 37.628 8.83594C34.5083 8 22 8 22 8C22 8 9.49164 8 6.37195 8.83594C4.65117 9.29594 3.29562 10.6512 2.8357 12.3723C2 15.4916 2 22.0002 2 22.0002C2 22.0002 2 28.5087 2.8357 31.6277C3.29562 33.3488 4.65117 34.7045 6.37195 35.1644C9.49164 36 22 36 22 36C22 36 34.5083 36 37.628 35.1644C39.3491 34.7045 40.7044 33.3488 41.1643 31.6277C41.9999 28.5087 41.9999 22.0002 41.9999 22.0002C41.9999 22.0002 41.9999 15.4916 41.1643 12.3723ZM17.9998 28.0003V16.0001L28.3919 22.0002L17.9998 28.0003Z"
+              class="fill-white/50 group-hover:fill-primary group-active:fill-primary-green-dark transition-colors duration-200"
+            />
+          </svg>
+        </a>
+
+        <!-- Bluesky Icon -->
+        <a
+          href="${this.blueskyUrl}"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="w-11 h-11 flex items-center justify-center cursor-pointer group transition-transform duration-300 hover:scale-110"
+          aria-label="Bluesky"
+        >
+          <svg
+            width="44"
+            height="44"
+            viewBox="0 0 44 44"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M11.5552 7.65399C15.8157 10.7821 20.3983 17.1246 22.0808 20.5284C23.7634 17.1249 28.3457 10.7821 32.6063 7.65399C35.6804 5.39686 40.6613 3.65043 40.6613 9.20768C40.6613 10.3175 40.0107 18.5311 39.629 19.8645C38.3026 24.5005 33.469 25.6829 29.1695 24.9672C36.685 26.2182 38.5969 30.3619 34.4679 34.5056C26.6263 42.3752 23.1973 32.531 22.3182 30.0086C22.1571 29.5462 22.0818 29.3298 22.0806 29.5138C22.0795 29.3298 22.0042 29.5462 21.8431 30.0086C20.9644 32.531 17.5354 42.3755 9.69334 34.5056C5.56436 30.3619 7.47617 26.218 14.9918 24.9672C10.6921 25.6829 5.85851 24.5005 4.53224 19.8645C4.15063 18.531 3.5 10.3174 3.5 9.20768C3.5 3.65043 8.48099 5.39686 11.555 7.65399H11.5552Z"
               class="fill-white/50 group-hover:fill-primary group-active:fill-primary-green-dark transition-colors duration-200"
             />
           </svg>
