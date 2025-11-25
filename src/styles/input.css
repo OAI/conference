@@ -36,6 +36,7 @@
   --color-primary: #47c552;
   --color-primary-green-dark: #338a3a;
   --color-primary-green-muted: #4d7051;
+  --color-primary-gray: #0000007a; /* #000000 with 48% opacity */
   --color-bg-dark: #000000;
   --color-bg-dark-elevated: #0a0a0a;
   --color-bg-card: #1a1a1a;
@@ -45,6 +46,7 @@
   --color-text-muted: #737373;
   --color-text-on-green: #000000;
   --color-border-primary: #4d4d4d;
+  --color-border-green: #47c552;
 }
 
 /* ==================================================================================== */
@@ -71,6 +73,7 @@
   --color-text-on-green: #000000;
 
   --color-border-primary: #4d4d4d;
+  --color-border-green: #47c552;
 
   /* ==================== */
   /* Spacing Scale        */
@@ -273,24 +276,6 @@
 
 .scrollbar-hide::-webkit-scrollbar {
   display: none;
-}
-
-/* Speaker Avatar Hover Effects */
-
-/* LinkedIn icon - hidden by default */
-.linkedin-icon-overlay {
-  opacity: 0;
-  transform: scale(0);
-}
-
-/* Speaker overlay and LinkedIn icon - visible on hover */
-.speaker-avatar-link:hover .speaker-overlay {
-  opacity: 1 !important;
-}
-
-.speaker-avatar-link:hover .linkedin-icon-overlay {
-  opacity: 1 !important;
-  transform: scale(1) !important;
 }
 
 /* Force text inheritance for spans inside links/buttons */

@@ -9,6 +9,7 @@ import { SocialIcons } from "./components/SocialIcons.js";
 import { CountdownTimer } from "./components/CountdownTimer.js";
 import { CalendarPopup } from "./components/CalendarPopup.js";
 import { AgendaRenderer } from "./components/AgendaRenderer.js";
+import { AgendaModal } from "./components/AgendaModal.js";
 import { DualHeaderSection } from "./components/DualHeaderSection.js";
 import { PreviousEventsGallery } from "./components/PreviousEventsGallery.js";
 import { agendaSections } from "./data/agenda.js";
@@ -53,10 +54,19 @@ function init() {
   const calendarPopup = new CalendarPopup();
   calendarPopup.init();
 
+  // Initialize Agenda Modal
+  const agendaModal = new AgendaModal();
+
   // Initialize Agenda
   const agendaContainer = document.getElementById("agenda-container");
   if (agendaContainer) {
     const agendaRenderer = new AgendaRenderer(agendaSections);
+
+    // Wire up click handler to open modal
+    agendaRenderer.onItemClick = (item, index, allItems) => {
+      agendaModal.open(item, index, allItems);
+    };
+
     agendaRenderer.mount(agendaContainer);
   }
 

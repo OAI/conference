@@ -8,6 +8,22 @@
 export class AgendaRenderer {
   constructor(sections) {
     this.sections = sections;
+    this.onItemClick = null;
+  }
+
+  /**
+   * Get all clickable items (items with speakers) flattened
+   */
+  getClickableItems() {
+    const items = [];
+    this.sections.forEach((section) => {
+      section.items.forEach((item) => {
+        if (item.speakers && item.speakers.length > 0) {
+          items.push(item);
+        }
+      });
+    });
+    return items;
   }
 
   /**
@@ -86,69 +102,32 @@ export class AgendaRenderer {
       ? `${speaker.job}, ${speaker.company}`
       : speaker.company;
 
-    if (speaker.linkedin) {
-      return `
-        <div class="flex gap-3 items-start desktop-xl:h-20 desktop-xl:items-center desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12">
-          <!-- Avatar with Link -->
-          <div class="w-13 tablet:w-12 h-13 tablet:h-12 desktop-xl:h-20 desktop-xl:w-20 shrink-0">
-            <a
-              href="${speaker.linkedin}"
-              target="_blank"
-              rel="noopener noreferrer"
-              class="speaker-avatar-link block w-full h-full relative group/avatar transition-transform duration-300 ease-out hover:scale-105"
-              data-speaker-link
-            >
-              <div class="w-full h-full rounded-full overflow-hidden relative">
-                ${
-                  speaker.avatar
-                    ? `<img src="${speaker.avatar}" alt="${speaker.name}" class="w-full h-full object-cover" />`
-                    : `<div class="w-full h-full bg-text-muted/20"></div>`
-                }
-                <!-- Dark Overlay -->
-                <div class="speaker-overlay absolute inset-0 bg-black/48 opacity-0 transition-all duration-300 ease-out"></div>
-                <!-- LinkedIn Icon -->
-                <div class="linkedin-icon-overlay absolute inset-0 flex items-center justify-center transition-all duration-300">
-                  <img src="./images/linkedin_overlay.svg" alt="LinkedIn" class="w-6 h-6 tablet:w-7 tablet:h-7 desktop:w-4 desktop:h-4 desktop-xl:w-6 desktop-xl:h-6" />
-                </div>
-              </div>
-            </a>
-          </div>
+    const tscBadge = speaker.isTscMember
+      ? `<span class="inline-flex items-center px-1.5 py-0.5 rounded-3xl text-[10px] h-5 desktop:text-[11px] font-normal bg-primary-green-dark text-black uppercase leading-[18px] tracking-wider ml-2 whitespace-nowrap shrink-0">TSC Member</span>`
+      : "";
 
-          <!-- Speaker Details -->
-          <div class="flex flex-col gap-0.5 desktop:gap-2 tablet:gap-0">
-            <div class="text-[16px] desktop:text-xl desktop-xxl:text-[28px] leading-none py-1 tablet:py-0 font-bold text-text-primary uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
-              ${speaker.name}
-            </div>
-            <div class="text-[13px] desktop:text-[13px] desktop-xxl:text-[16px] text-text-muted uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">
-              ${companyText}
-            </div>
+    return `
+      <div class="flex gap-3 items-start desktop-xl:h-20 desktop-xl:items-center desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12">
+        <!-- Avatar -->
+        <div class="w-13 tablet:w-12 h-13 tablet:h-12 desktop-xl:h-20 desktop-xl:w-20 rounded-full overflow-hidden shrink-0">
+          ${
+            speaker.avatar
+              ? `<img src="${speaker.avatar}" alt="${speaker.name}" class="w-full h-full object-cover" />`
+              : `<div class="w-full h-full bg-text-muted/20"></div>`
+          }
+        </div>
+
+        <!-- Speaker Details -->
+        <div class="flex flex-col gap-0.5 desktop:gap-2 tablet:gap-0">
+          <div class="flex items-center text-[16px] desktop:text-xl desktop-xxl:text-[28px] leading-none py-1 tablet:py-0 font-bold text-text-primary uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
+            ${speaker.name}${tscBadge}
+          </div>
+          <div class="text-[13px] desktop:text-[13px] desktop-xxl:text-[16px] text-text-muted uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">
+            ${companyText}
           </div>
         </div>
-      `;
-    } else {
-      return `
-        <div class="flex gap-3 items-start desktop-xl:h-20 desktop-xl:items-center desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12">
-          <!-- Avatar -->
-          <div class="w-13 tablet:w-12 h-13 tablet:h-12 desktop-xl:h-20 desktop-xl:w-20 rounded-full overflow-hidden shrink-0">
-            ${
-              speaker.avatar
-                ? `<img src="${speaker.avatar}" alt="${speaker.name}" class="w-full h-full object-cover" />`
-                : `<div class="w-full h-full bg-text-muted/20"></div>`
-            }
-          </div>
-
-          <!-- Speaker Details -->
-          <div class="flex flex-col gap-0.5 desktop:gap-2 tablet:gap-0">
-            <div class="text-[16px] desktop:text-xl desktop-xxl:text-[28px] leading-none py-1 tablet:py-0 font-bold text-text-primary uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
-              ${speaker.name}
-            </div>
-            <div class="text-[13px] desktop:text-[13px] desktop-xxl:text-[16px] text-text-muted uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">
-              ${companyText}
-            </div>
-          </div>
-        </div>
-      `;
-    }
+      </div>
+    `;
   }
 
   /**
@@ -192,9 +171,12 @@ export class AgendaRenderer {
   renderAgendaItem(item, isLastInRow = false) {
     const hoverClass = item.disableHover ? "" : "hover:bg-primary group";
     const borderClass = isLastInRow ? "" : "md:border-r";
+    const isClickable = item.speakers && item.speakers.length > 0;
+    const clickableClass = isClickable ? "cursor-pointer" : "";
+    const dataItemId = isClickable ? `data-item-id="${item.id}"` : "";
 
     return `
-      <div class="bg-black border-b md:border-0 md:border-b py-8 px-4 tablet:p-4 tablet:py-8 desktop:p-16 desktop-xxl:p-24 flex flex-col justify-between h-full transition-colors duration-200 ease-in-out ${hoverClass} ${borderClass} border-border-primary">
+      <div class="bg-black border-b md:border-0 md:border-b py-8 px-4 tablet:p-4 tablet:py-8 desktop:p-16 desktop-xxl:p-24 flex flex-col justify-between h-full transition-colors duration-200 ease-in-out ${hoverClass} ${borderClass} ${clickableClass} border-border-primary" ${dataItemId}>
         <!-- Time and Category -->
         <div class="flex items-center justify-between mb-2">
           <div class="text-xs tablet:text-[13px] text-white tablet:text-white desktop-xxl:text-[16px] uppercase tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
@@ -225,14 +207,14 @@ export class AgendaRenderer {
               item.speakers && item.speakers.length === 2
                 ? this.renderTwoSpeakers(item.speakers)
                 : item.speakers && item.speakers.length > 0
-                  ? item.speakers
-                      .map((speaker) => this.renderSpeakerInfo(speaker))
-                      .join("")
-                  : item.badge
-                    ? `<div class="text-xs flex items-center text-text-muted desktop:text-[13px] desktop-xxl:text-[16px] font-normal uppercase desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12 desktop-xl:h-20 tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
+                ? item.speakers
+                    .map((speaker) => this.renderSpeakerInfo(speaker))
+                    .join("")
+                : item.badge
+                ? `<div class="text-xs flex items-center text-text-muted desktop:text-[13px] desktop-xxl:text-[16px] font-normal uppercase desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12 desktop-xl:h-20 tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
                       ${item.badge}
                     </div>`
-                    : ""
+                : ""
             }
           </div>
 
@@ -291,13 +273,19 @@ export class AgendaRenderer {
 
       itemsHtml = `
         <div class="flex flex-col md:flex-row w-full h-auto tablet:h-[252px] desktop:h-[490px]">
-          <div class="three-item-1" style="--width-desktop-xxl: ${widths.width1};">
+          <div class="three-item-1" style="--width-desktop-xxl: ${
+            widths.width1
+          };">
             ${this.renderAgendaItem(section.items[0])}
           </div>
-          <div class="three-item-2" style="--width-desktop-xxl: ${widths.width2};">
+          <div class="three-item-2" style="--width-desktop-xxl: ${
+            widths.width2
+          };">
             ${this.renderAgendaItem(section.items[1])}
           </div>
-          <div class="three-item-3" style="--width-desktop-xxl: ${widths.width3};">
+          <div class="three-item-3" style="--width-desktop-xxl: ${
+            widths.width3
+          };">
             ${this.renderAgendaItem(section.items[2], true)}
           </div>
         </div>
@@ -328,10 +316,14 @@ export class AgendaRenderer {
             );
             return `
             <div class="flex flex-col md:flex-row w-full h-auto tablet:h-[252px] desktop:h-[490px] pair-container">
-              <div class="pair-item-1" style="--width-desktop-xxl: ${widths.width1};">
+              <div class="pair-item-1" style="--width-desktop-xxl: ${
+                widths.width1
+              };">
                 ${this.renderAgendaItem(pair[0])}
               </div>
-              <div class="pair-item-2" style="--width-desktop-xxl: ${widths.width2};">
+              <div class="pair-item-2" style="--width-desktop-xxl: ${
+                widths.width2
+              };">
                 ${this.renderAgendaItem(pair[1], true)}
               </div>
             </div>
@@ -370,35 +362,20 @@ export class AgendaRenderer {
   }
 
   /**
-   * Initialize speaker avatar link interactions
+   * Initialize click handlers for agenda items
    */
-  initSpeakerAvatarInteractions() {
-    const speakerLinks = document.querySelectorAll("[data-speaker-link]");
+  initItemClickHandlers() {
+    const clickableItems = document.querySelectorAll("[data-item-id]");
+    const allItems = this.getClickableItems();
 
-    speakerLinks.forEach((link) => {
-      const overlay = link.querySelector(".speaker-overlay");
+    clickableItems.forEach((element) => {
+      element.addEventListener("click", () => {
+        const itemId = element.getAttribute("data-item-id");
+        const item = allItems.find((i) => i.id === itemId);
+        const index = allItems.findIndex((i) => i.id === itemId);
 
-      link.addEventListener("mousedown", () => {
-        link.classList.add("scale-95");
-        if (overlay) {
-          overlay.classList.remove("bg-black/48");
-          overlay.classList.add("bg-black/80");
-        }
-      });
-
-      link.addEventListener("mouseup", () => {
-        link.classList.remove("scale-95");
-        if (overlay) {
-          overlay.classList.remove("bg-black/80");
-          overlay.classList.add("bg-black/48");
-        }
-      });
-
-      link.addEventListener("mouseleave", () => {
-        link.classList.remove("scale-95");
-        if (overlay) {
-          overlay.classList.remove("bg-black/80");
-          overlay.classList.add("bg-black/48");
+        if (item && this.onItemClick) {
+          this.onItemClick(item, index, allItems);
         }
       });
     });
@@ -413,6 +390,6 @@ export class AgendaRenderer {
       return;
     }
     container.innerHTML = this.render();
-    this.initSpeakerAvatarInteractions();
+    this.initItemClickHandlers();
   }
 }
