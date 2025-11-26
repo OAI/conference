@@ -188,8 +188,8 @@ export class AgendaModal {
                 ${oaiBadge}
               </div>
               ${
-                speaker.company
-                  ? `<div class="text-sm text-primary-gray uppercase tracking-widest leading-5">${speaker.company}</div>`
+                speaker.job || speaker.company
+                  ? `<div class="text-sm text-primary-gray uppercase tracking-widest leading-5">${[speaker.job, speaker.company].filter(Boolean).join(", ")}</div>`
                   : ""
               }
             </div>
@@ -215,8 +215,8 @@ export class AgendaModal {
             ${oaiBadge}
           </div>
           ${
-            speaker.company
-              ? `<div class="text-sm text-primary-gray uppercase tracking-widest mb-4">${speaker.company}</div>`
+            speaker.job || speaker.company
+              ? `<div class="text-sm text-primary-gray uppercase tracking-widest mb-4">${[speaker.job, speaker.company].filter(Boolean).join(", ")}</div>`
               : ""
           }
           <div class="flex gap-2">

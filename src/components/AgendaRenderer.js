@@ -123,13 +123,8 @@ export class AgendaRenderer {
             ${speaker.name}${tscBadge}${oaiBadge}
           </div>
           ${
-            speaker.job || speaker.company
-              ? `<div class="text-sm desktop:text-sm desktop-xxl:text-[16px] text-primary-gray uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">${[
-                  speaker.job,
-                  speaker.company,
-                ]
-                  .filter(Boolean)
-                  .join(", ")}</div>`
+            speaker.company
+              ? `<div class="text-sm desktop:text-sm desktop-xxl:text-[16px] text-primary-gray uppercase group-hover:text-text-on-green tracking-widest transition-colors duration-200 ease-in-out">${speaker.company}</div>`
               : ""
           }
         </div>
