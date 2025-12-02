@@ -14,6 +14,7 @@ export class AgendaModal {
     this.allItems = [];
     this.escapeHandler = null;
     this.touchStartX = 0;
+    this.scrollPosition = 0;
   }
 
   /**
@@ -30,6 +31,10 @@ export class AgendaModal {
     this.render();
 
     // Prevent body scroll
+    this.scrollPosition = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${this.scrollPosition}px`;
+    document.body.style.width = "100%";
     document.body.style.overflow = "hidden";
 
     // Focus the modal
@@ -50,7 +55,11 @@ export class AgendaModal {
     }
 
     // Restore body scroll
+    document.body.style.position = "";
+    document.body.style.top = "";
+    document.body.style.width = "";
     document.body.style.overflow = "";
+    window.scrollTo(0, this.scrollPosition);
 
     // Remove escape handler
     if (this.escapeHandler) {
@@ -269,7 +278,7 @@ export class AgendaModal {
     this.container.innerHTML = `
       <!-- Backdrop - visible on tablet+ -->
       <div
-        class="fixed inset-0 z-50 tablet:bg-bg-dark/94 flex items-center justify-center"
+        class="fixed inset-0 z-50 bg-bg-dark tablet:bg-bg-dark/94 flex items-center justify-center"
         data-backdrop
         role="dialog"
         aria-modal="true"
