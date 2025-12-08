@@ -27,7 +27,7 @@ function init() {
 
   // Initialize Social Icons (Footer Mobile)
   const footerSocialMobile = document.getElementById(
-    "footer-social-icons-mobile",
+    "footer-social-icons-mobile"
   );
   if (footerSocialMobile) {
     const footerSocial = new SocialIcons();
@@ -36,7 +36,7 @@ function init() {
 
   // Initialize Social Icons (Footer Desktop)
   const footerSocialDesktop = document.getElementById(
-    "footer-social-icons-desktop",
+    "footer-social-icons-desktop"
   );
   if (footerSocialDesktop) {
     const footerSocial = new SocialIcons();
@@ -44,11 +44,12 @@ function init() {
   }
 
   // Initialize Countdown Timer
+  /*
   const countdownContainer = document.getElementById("countdown-timer");
   if (countdownContainer) {
     const countdown = new CountdownTimer(config.EVENT_DATE);
     countdown.mount(countdownContainer);
-  }
+  }*/
 
   // Initialize Calendar Popup
   const calendarPopup = new CalendarPopup();
