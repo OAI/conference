@@ -4,6 +4,9 @@
  * Provides base path handling for assets
  */
 
+// Asset version for cache busting - increment when deploying changes
+const ASSET_VERSION = "1";
+
 // Determine base path based on environment
 // Uses BASE_PATH environment variable from build process
 // Development (localhost): empty string (for local dev server)
@@ -30,9 +33,9 @@ const BASE_PATH = (() => {
 export function asset(path) {
   if (!path.startsWith("/")) {
     console.warn(`Asset path should start with /: ${path}`);
-    return `${BASE_PATH}/${path}`;
+    return `${BASE_PATH}/${path}?v=${ASSET_VERSION}`;
   }
-  return `${BASE_PATH}${path}`;
+  return `${BASE_PATH}${path}?v=${ASSET_VERSION}`;
 }
 
 /**
