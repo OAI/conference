@@ -12,6 +12,7 @@ import { AgendaRenderer } from "./components/AgendaRenderer.js";
 import { AgendaModal } from "./components/AgendaModal.js";
 import { DualHeaderSection } from "./components/DualHeaderSection.js";
 import { PreviousEventsGallery } from "./components/PreviousEventsGallery.js";
+import { PreviousEventsDropdown } from "./components/PreviousEventsDropdown.js";
 import { agendaSections } from "./data/agenda.js";
 
 /**
@@ -42,6 +43,10 @@ function init() {
     const footerSocial = new SocialIcons();
     footerSocial.mount(footerSocialDesktop);
   }
+
+  // Initialize Previous Events Dropdown
+  const previousEventsDropdown = new PreviousEventsDropdown();
+  previousEventsDropdown.mount();
 
   // Initialize Countdown Timer
   /*

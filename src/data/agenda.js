@@ -176,7 +176,6 @@ export const agendaSections = [
             avatar: asset("/images/speakers/Chris.jpg"),
             linkedin: "https://www.linkedin.com/in/sensiblewood/",
             isOaiMember: true,
-            isOaiMember: true,
           },
         ],
       },

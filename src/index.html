@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <!-- Meta Tags -->
@@ -92,15 +92,20 @@
       <div class="max-w-[2440px] w-full">
         <!-- Header Hero Section -->
         <header
-          class="flex flex-col tablet:flex-row h-[667px] tablet:min-h-0 tablet:h-[clamp(640px,50vw+160px,900px)] text-text-primary overflow-hidden desktop:h-[max(min(100vh,1116px),744px)] desktop-xl:h-[max(min(100vh,1117px),900px)] desktop-xxl:h-[max(min(100vh,1280px),1117px)]"
+          class="flex flex-col tablet:flex-row h-[667px] tablet:min-h-0 tablet:h-[clamp(640px,50vw+160px,900px)] text-text-primary overflow-hidden desktop:h-[max(min(100vh,1166px),794px)] desktop-xl:h-[max(min(100vh,1117px),900px)] desktop-xxl:h-[max(min(100vh,1280px),1117px)]"
         >
           <!-- Left Content Container (2/3) -->
           <div
-            class="flex w-full tablet:w-2/3 flex-col tablet:px-4 tablet:py-8 desktop:p-16 desktop-xxl:p-24 tablet:border-r-border-primary pt-6"
+            class="flex w-full tablet:w-2/3 flex-col tablet:px-4 tablet:pb-8 desktop:px-16 desktop:pb-16 desktop-xxl:px-24 desktop-xxl:pb-24 tablet:border-r-border-primary"
           >
+            <div
+              class="w-full h-[29px] tablet:h-[61px] shrink-0 border-b border-border-primary flex items-center justify-end"
+            >
+              <div id="previous-events-dropdown" class="h-full"></div>
+            </div>
             <!-- Logos Section -->
             <div
-              class="flex flex-row w-full items-center h-10.5 px-4 tablet:mb-[22px] desktop:mb-[clamp(43px,1vh,91.5px)] desktop-xxl:mb-[43px] desktop:h-16 tablet:px-0 justify-between"
+              class="flex flex-row w-full items-center h-10.5 px-4 tablet:mb-[22px] desktop:mb-[clamp(43px,1vh,91.5px)] desktop-xxl:mb-[43px] desktop:h-16 tablet:px-0 justify-between mt-4 desktop:mt-6"
             >
               <div
                 class="w-40 tablet:w-44 tablet:pl-4 desktop:pl-0 h-10.5 desktop:h-16 desktop:w-[243px] desktop-xxl:h-18 desktop-xxl:w-[273px] flex items-center justify-center desktop:justify-start"
@@ -135,7 +140,7 @@
               class="flex flex-col h-[clamp(180px,50vw+16px,231px)] mobile:h-[231px] justify-center tablet:h-auto px-4 tablet:mb-0 desktop:pb-0 tablet:px-0"
             >
               <div
-                class="flex flex-col justify-center text-[clamp(32px,10vw+12px,55px)] mobile:text-[55px] h-[159px] tablet:h-auto tablet:text-[clamp(80px,5vw+32px,160px)] desktop:text-[clamp(6rem,5vw+32px,8rem)] font-bold leading-[1.05] tablet:leading-none tracking-tighter desktop-xl:text-[clamp(8rem,5vw+24px,11rem)] desktop-xl:leading-[clamp(8rem,5vw+24px,11rem)] desktop-xxl:leading-[10rem] desktop-xxl:text-[180px] wrap-break-word uppercase"
+                class="flex flex-col justify-center text-[clamp(32px,10vw+12px,55px)] mobile:text-[55px] h-[159px] tablet:h-auto tablet:text-[clamp(80px,5vw+32px,160px)] desktop:text-[clamp(6rem,5vw+32px,8rem)] font-bold leading-[1.00] tablet:leading-none tracking-tighter desktop-xl:text-[clamp(8rem,5vw+24px,11rem)] desktop-xl:leading-[clamp(8rem,5vw+24px,11rem)] desktop-xxl:leading-[10rem] desktop-xxl:text-[180px] wrap-break-word uppercase"
               >
                 <span class="text-primary block">OpenAPI</span>
                 <span class="text-text-primary block">Conference</span>
@@ -183,7 +188,7 @@
               rel="noopener noreferrer"
               class="tablet:hidden p-4 relative h-[152px] -mt-6 rounded-b-4xl overflow-hidden bg-cover bg-center block cursor-pointer"
               style="
-                background-image: url('./images/background/background_top_right.jpg?v=1');
+                background-image: url(&quot;./images/background/background_top_right.jpg?v=1&quot;);
               "
             >
               <!-- Dark Overlay -->
@@ -292,7 +297,7 @@
               <div
                 class="w-full h-full absolute bg-cover bg-center bg-pan-slow"
                 style="
-                  background-image: url('./images/background/background_top_right.jpg?v=1');
+                  background-image: url(&quot;./images/background/background_top_right.jpg?v=1&quot;);
                 "
               ></div>
 
