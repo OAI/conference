@@ -11,17 +11,17 @@ export class CalendarPopup {
     this.container = null;
 
     // Event details
-    this.eventTitle = "OpenAPI Conference Paris 2025";
+    this.eventTitle = "OpenAPI Conference San Jose 2026";
     this.eventDescription =
-      "Join us at the OpenAPI Conference in Paris. More info: https://conference.openapis.org";
+      "Join us at the OpenAPI Conference in San Jose. More info: https://conference.openapis.org";
     this.eventLocation =
-      "CNIT Forest, 2 Pl. de la Defense, 92092 Puteaux, France";
-    this.startDate = "2025-12-11T09:15:00";
-    this.endDate = "2025-12-11T18:00:00";
+      "San Jose Convention Center, 150 W San Carlos St, San Jose, CA 95113, USA";
+    this.startDate = "2026-02-18T09:15:00";
+    this.endDate = "2026-02-20T18:00:00";
 
     // Format dates for different calendars
-    this.googleStart = "20251211T091500";
-    this.googleEnd = "20251211T180000";
+    this.googleStart = "20260218T091500";
+    this.googleEnd = "20260220T180000";
 
     // Pre-calculate URLs
     this.googleCalendarUrl = this.buildGoogleCalendarUrl();
@@ -44,9 +44,9 @@ export class CalendarPopup {
    */
   buildGoogleCalendarUrl() {
     return `https://calendar.google.com/calendar/render?action=TEMPLATE&text=${encodeURIComponent(
-      this.eventTitle
+      this.eventTitle,
     )}&dates=${this.googleStart}/${this.googleEnd}&details=${encodeURIComponent(
-      this.eventDescription
+      this.eventDescription,
     )}&location=${encodeURIComponent(this.eventLocation)}`;
   }
 
@@ -55,7 +55,7 @@ export class CalendarPopup {
    */
   buildOutlookUrl() {
     return `https://outlook.office.com/calendar/0/deeplink/compose?subject=${encodeURIComponent(
-      this.eventTitle
+      this.eventTitle,
     )}&body=${encodeURIComponent(this.eventDescription)}&startdt=${
       this.startDate
     }&enddt=${this.endDate}&location=${encodeURIComponent(this.eventLocation)}`;
@@ -65,7 +65,7 @@ export class CalendarPopup {
    * Generate ICS file content
    */
   generateICS() {
-    const uid = "openapi-conference-2025@openapis.org";
+    const uid = "openapi-conference-2026@openapis.org";
     const dtstamp =
       new Date().toISOString().replace(/[-:]/g, "").split(".")[0] + "Z";
 
@@ -75,8 +75,8 @@ PRODID:-//OpenAPI Conference//EN
 BEGIN:VEVENT
 UID:${uid}
 DTSTAMP:${dtstamp}
-DTSTART:20251211T091500
-DTEND:20251211T180000
+DTSTART:20260218T091500
+DTEND:20260220T180000
 SUMMARY:${this.eventTitle}
 DESCRIPTION:${this.eventDescription}
 LOCATION:${this.eventLocation}
@@ -93,7 +93,7 @@ END:VCALENDAR`;
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
     link.href = url;
-    link.download = "openapi-conference.ics";
+    link.download = "openapi-conference-2026.ics";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
@@ -262,7 +262,7 @@ END:VCALENDAR`;
     const backdrop = this.container.querySelector("[data-backdrop]");
     const closeBtn = this.container.querySelector("[data-close-btn]");
     const downloadButtons = this.container.querySelectorAll(
-      "[data-download-ics], [data-download-ics-alt]"
+      "[data-download-ics], [data-download-ics-alt]",
     );
 
     backdrop.addEventListener("click", (e) => this.handleBackdropClick(e));

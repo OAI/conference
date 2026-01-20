@@ -1,14 +1,14 @@
 /**
  * CountdownTimer Component
  *
- * Displays a countdown to December 9, 2025
+ * Displays a countdown to February 18, 2026
  * Updates every second
  */
 
 import { asset } from "../config.js";
 
 export class CountdownTimer {
-  constructor(targetDate = "2025-12-11T09:15:00") {
+  constructor(targetDate = "2026-02-18T09:15:00") {
     this.targetDate = new Date(targetDate);
     this.interval = null;
     this.days = 0;
@@ -27,7 +27,7 @@ export class CountdownTimer {
     if (diff > 0) {
       this.days = Math.floor(diff / (1000 * 60 * 60 * 24));
       this.hours = Math.floor(
-        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60)
+        (diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60),
       );
       this.minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
       this.seconds = Math.floor((diff % (1000 * 60)) / 1000);
@@ -62,8 +62,8 @@ export class CountdownTimer {
           class="inline h-2 mx-3"
         />
         <div data-countdown-time>${this.pad(this.hours)}:${this.pad(
-      this.minutes
-    )}:${this.pad(this.seconds)}</div>
+          this.minutes,
+        )}:${this.pad(this.seconds)}</div>
       </div>
     `;
   }
@@ -78,7 +78,7 @@ export class CountdownTimer {
     if (daysEl && timeEl) {
       daysEl.textContent = this.days;
       timeEl.textContent = `${this.pad(this.hours)}:${this.pad(
-        this.minutes
+        this.minutes,
       )}:${this.pad(this.seconds)}`;
     }
   }

@@ -43,8 +43,9 @@ export function asset(path) {
  */
 export const config = {
   BASE_PATH,
-  EVENT_DATE: "2025-12-11T09:15:00",
-  EVENT_LOCATION: "CNIT Forest, 2 Pl. de la Defense, 92092 Puteaux, France",
+  EVENT_DATE: "2026-02-18T09:15:00",
+  EVENT_LOCATION:
+    "San Jose Convention Center, 150 W San Carlos St, San Jose, CA 95113, USA",
   SOCIAL_LINKS: {
     linkedin: "https://www.linkedin.com/company/openapis-org",
     youtube: "https://www.youtube.com/@OpenAPIsOrg",
