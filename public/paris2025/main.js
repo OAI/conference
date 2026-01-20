@@ -4,20 +4,13 @@ var __publicField = (obj, key, value) => __defNormalProp(obj, typeof key !== "sy
 
 // src/config.js
 var ASSET_VERSION = "1";
-var BASE_PATH = (() => {
-  if (typeof window !== "undefined") {
-    const hostname = window.location.hostname;
-    const isDevelopment = hostname === "localhost" || hostname === "127.0.0.1";
-    return isDevelopment ? "" : "";
-  }
-  return "";
-})();
 function asset(path) {
-  if (!path.startsWith("/")) {
-    console.warn(`Asset path should start with /: ${path}`);
-    return `${BASE_PATH}/${path}?v=${ASSET_VERSION}`;
+  if (path.startsWith("/")) {
+    path = "." + path;
+  } else if (!path.startsWith("./") && !path.startsWith("../")) {
+    path = "./" + path;
   }
-  return `${BASE_PATH}${path}?v=${ASSET_VERSION}`;
+  return `${path}?v=${ASSET_VERSION}`;
 }
 
 // src/components/SocialIcons.js
