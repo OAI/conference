@@ -49,12 +49,11 @@ function init() {
   otherLocationsDropdown.mount();
 
   // Initialize Countdown Timer
-  /*
   const countdownContainer = document.getElementById("countdown-timer");
   if (countdownContainer) {
     const countdown = new CountdownTimer(config.EVENT_DATE);
     countdown.mount(countdownContainer);
-  }*/
+  }
 
   // Initialize Calendar Popup
   const calendarPopup = new CalendarPopup();
