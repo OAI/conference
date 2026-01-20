@@ -44,14 +44,14 @@ export class PreviousEventsDropdown {
         </button>
         <div
           id="previous-events-menu"
-          class="absolute p-6 right-0 top-full w-50 bg-bg-dark border border-border-primary shadow-lg opacity-0 invisible transition-all duration-200 z-50"
+          class="absolute p-6 right-0 top-full w-50 bg-bg-dark border border-border-primary shadow-lg opacity-0 invisible transition-all duration-200 z-50 max-h-[300px] overflow-y-auto overflow-x-hidden"
           role="menu"
         >
           <ul class="w-[152px] mx-auto">
             ${previousEvents
               .map(
                 (event) => `
-              <li role="none">
+              <li role="none" class="mb-4 last:mb-0">
                 <a
                   href="${event.url}"
                   class="block hover:bg-white/5 uppercase transition-colors duration-150"
