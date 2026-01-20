@@ -1,12 +1,12 @@
 /**
- * PreviousEventsDropdown Component
+ * OtherLocationsDropdown Component
  *
  * Dropdown for navigating to previous OpenAPI Conference events
  */
 
 import { previousEvents } from "../data/previousEvents.js";
 
-export class PreviousEventsDropdown {
+export class OtherLocationsDropdown {
   constructor() {
     this.isOpen = false;
     this.container = null;
@@ -37,7 +37,7 @@ export class PreviousEventsDropdown {
           aria-expanded="false"
           aria-haspopup="true"
         >
-          <span class="cursor-pointer">Previous events</span>
+          <span class="cursor-pointer">Other locations</span>
           <svg width="12" height="12" viewBox="0 0 12 12" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M6 8.49231L3 3.50769H9L6 8.49231Z" fill="currentColor"/>
           </svg>

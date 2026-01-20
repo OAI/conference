@@ -1,5 +1,5 @@
 /**
- * Previous Events Data
+ * Other locations Data
  *
  * List of previous OpenAPI Conference events for the dropdown
  */

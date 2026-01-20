@@ -16,12 +16,12 @@ export class CalendarPopup {
       "Join us at the OpenAPI Conference in San Jose. More info: https://conference.openapis.org";
     this.eventLocation =
       "San Jose Convention Center, 150 W San Carlos St, San Jose, CA 95113, USA";
-    this.startDate = "2026-02-18T09:15:00";
-    this.endDate = "2026-02-20T18:00:00";
+    this.startDate = "2026-02-20T09:00:00";
+    this.endDate = "2026-02-20T16:00:00";
 
     // Format dates for different calendars
-    this.googleStart = "20260218T091500";
-    this.googleEnd = "20260220T180000";
+    this.googleStart = "20260220T090000";
+    this.googleEnd = "20260220T160000";
 
     // Pre-calculate URLs
     this.googleCalendarUrl = this.buildGoogleCalendarUrl();
@@ -75,8 +75,8 @@ PRODID:-//OpenAPI Conference//EN
 BEGIN:VEVENT
 UID:${uid}
 DTSTAMP:${dtstamp}
-DTSTART:20260218T091500
-DTEND:20260220T180000
+DTSTART:20260220T090000
+DTEND:20260220T160000
 SUMMARY:${this.eventTitle}
 DESCRIPTION:${this.eventDescription}
 LOCATION:${this.eventLocation}
