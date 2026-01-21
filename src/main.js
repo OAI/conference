@@ -12,6 +12,7 @@ import { AgendaRenderer } from "./components/AgendaRenderer.js";
 import { AgendaModal } from "./components/AgendaModal.js";
 import { DualHeaderSection } from "./components/DualHeaderSection.js";
 import { PreviousEventsGallery } from "./components/PreviousEventsGallery.js";
+import { OtherLocationsDropdown } from "./components/PreviousEventsDropdown.js";
 import { agendaSections } from "./data/agenda.js";
 
 /**
@@ -27,7 +28,7 @@ function init() {
 
   // Initialize Social Icons (Footer Mobile)
   const footerSocialMobile = document.getElementById(
-    "footer-social-icons-mobile"
+    "footer-social-icons-mobile",
   );
   if (footerSocialMobile) {
     const footerSocial = new SocialIcons();
@@ -36,20 +37,23 @@ function init() {
 
   // Initialize Social Icons (Footer Desktop)
   const footerSocialDesktop = document.getElementById(
-    "footer-social-icons-desktop"
+    "footer-social-icons-desktop",
   );
   if (footerSocialDesktop) {
     const footerSocial = new SocialIcons();
     footerSocial.mount(footerSocialDesktop);
   }
 
+  // Initialize Other locations Dropdown
+  const otherLocationsDropdown = new OtherLocationsDropdown();
+  otherLocationsDropdown.mount();
+
   // Initialize Countdown Timer
-  /*
   const countdownContainer = document.getElementById("countdown-timer");
   if (countdownContainer) {
     const countdown = new CountdownTimer(config.EVENT_DATE);
     countdown.mount(countdownContainer);
-  }*/
+  }
 
   // Initialize Calendar Popup
   const calendarPopup = new CalendarPopup();

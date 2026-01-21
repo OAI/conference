@@ -7,35 +7,26 @@
 // Asset version for cache busting - increment when deploying changes
 const ASSET_VERSION = "1";
 
-// Determine base path based on environment
-// Uses BASE_PATH environment variable from build process
-// Development (localhost): empty string (for local dev server)
-// Production: set via BASE_PATH env var in build
-const BASE_PATH = (() => {
-  if (typeof window !== "undefined") {
-    const hostname = window.location.hostname;
-    const isDevelopment = hostname === "localhost" || hostname === "127.0.0.1";
-    return isDevelopment ? "" : import.meta.env.BASE_PATH;
-  }
-  return import.meta.env.BASE_PATH;
-})();
+// BASE_PATH kept for backwards compatibility if used elsewhere
+const BASE_PATH = import.meta.env.BASE_PATH || "";
 
 /**
- * Asset path helper
+ * Asset path helper - returns relative paths for portability
  *
- * @param {string} path - Asset path (must start with /)
- * @returns {string} - Full asset path with base
+ * @param {string} path - Asset path (e.g., /images/logo.svg)
+ * @returns {string} - Relative asset path (e.g., ./images/logo.svg?v=1)
  *
  * @example
- * asset('/images/logo.svg') // Returns '/images/logo.svg' in production
- * asset('/images/logo.svg') // Returns '/images/logo.svg' in development
+ * asset('/images/logo.svg') // Returns './images/logo.svg?v=1'
  */
 export function asset(path) {
-  if (!path.startsWith("/")) {
-    console.warn(`Asset path should start with /: ${path}`);
-    return `${BASE_PATH}/${path}?v=${ASSET_VERSION}`;
+  // Convert to relative path for portability
+  if (path.startsWith("/")) {
+    path = "." + path;
+  } else if (!path.startsWith("./") && !path.startsWith("../")) {
+    path = "./" + path;
   }
-  return `${BASE_PATH}${path}?v=${ASSET_VERSION}`;
+  return `${path}?v=${ASSET_VERSION}`;
 }
 
 /**
@@ -43,8 +34,9 @@ export function asset(path) {
  */
 export const config = {
   BASE_PATH,
-  EVENT_DATE: "2025-12-11T09:15:00",
-  EVENT_LOCATION: "CNIT Forest, 2 Pl. de la Defense, 92092 Puteaux, France",
+  EVENT_DATE: "2026-02-20T09:00:00",
+  EVENT_LOCATION:
+    "San Jose Convention Center, 150 W San Carlos St, San Jose, CA 95113, USA",
   SOCIAL_LINKS: {
     linkedin: "https://www.linkedin.com/company/openapis-org",
     youtube: "https://www.youtube.com/@OpenAPIsOrg",
