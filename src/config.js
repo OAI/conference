@@ -4,8 +4,8 @@
  * Provides base path handling for assets
  */
 
-// Asset version for cache busting - increment when deploying changes
-const ASSET_VERSION = Date.now();
+// Asset version for cache busting - set to current date during build (YYYYMMDD format)
+const ASSET_VERSION = import.meta.env.ASSET_VERSION || Date.now();
 
 // BASE_PATH kept for backwards compatibility if used elsewhere
 const BASE_PATH = import.meta.env.BASE_PATH || "";

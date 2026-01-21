@@ -20,7 +20,6 @@ export const agendaSections = [
         description:
           "Join 600+ developers building new apps, bots — in person or online. Participants can build any app of their choice and will compete for $12,500+ in cash, products and prizes. Put yourself in the center of the developer world!",
         speakers: [],
-        icon: asset("/images/hackathon.svg"),
         disableHover: true,
       },
       {
@@ -244,7 +243,6 @@ export const agendaSections = [
         description:
           "Official DeveloperWeek Closing Ceremony. Join us for closing remarks and a celebration of the day's achievements.",
         speakers: [],
-        icon: asset("/images/closing.svg"),
         disableHover: true,
       },
     ],
