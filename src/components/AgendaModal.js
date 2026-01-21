@@ -183,11 +183,15 @@ export class AgendaModal {
         <!-- Desktop: horizontal layout -->
         <div class="hidden tablet:flex items-center justify-between">
           <div class="flex items-center gap-4">
-            <img
+            ${
+              speaker.avatar
+                ? `<img
               src="${speaker.avatar}"
               alt="${speaker.name}"
               class="w-20 h-20 rounded-full object-cover"
-            />
+            />`
+                : `<div class="w-20 h-20 rounded-full bg-primary-gray/30"></div>`
+            }
             <div>
               <div class="flex items-center gap-2">
                 <span class="font-bold text-text-primary uppercase tracking-wider leading-5">${
@@ -216,11 +220,15 @@ export class AgendaModal {
 
         <!-- Mobile: vertical layout -->
         <div class="tablet:hidden">
-          <img
+          ${
+            speaker.avatar
+              ? `<img
             src="${speaker.avatar}"
             alt="${speaker.name}"
             class="w-12 h-12 object-cover mb-4 rounded-full"
-          />
+          />`
+              : `<div class="w-12 h-12 mb-4 rounded-full bg-primary-gray/30"></div>`
+          }
           <div class="flex items-center gap-2 mb-1">
             <span class="font-bold text-text-primary uppercase tracking-wider">${
               speaker.name

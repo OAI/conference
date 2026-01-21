@@ -209,14 +209,14 @@ export class AgendaRenderer {
               item.speakers && item.speakers.length === 2
                 ? this.renderTwoSpeakers(item.speakers)
                 : item.speakers && item.speakers.length > 0
-                ? item.speakers
-                    .map((speaker) => this.renderSpeakerInfo(speaker))
-                    .join("")
-                : item.badge
-                ? `<div class="text-xs flex items-center text-primary-gray desktop:text-sm desktop-xxl:text-[16px] font-normal uppercase desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12 desktop-xl:h-20 tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
+                  ? item.speakers
+                      .map((speaker) => this.renderSpeakerInfo(speaker))
+                      .join("")
+                  : item.badge
+                    ? `<div class="text-xs flex items-center text-primary-gray desktop:text-sm desktop-xxl:text-[16px] font-normal uppercase desktop-xl:-ml-6 desktop-xl:-mb-6 desktop-xxl:-ml-12 desktop-xxl:-mb-12 desktop-xl:h-20 tracking-widest group-hover:text-text-on-green transition-colors duration-200 ease-in-out">
                       ${item.badge}
                     </div>`
-                : ""
+                    : ""
             }
           </div>
 
@@ -270,7 +270,7 @@ export class AgendaRenderer {
       const widths = this.calculateThreeBlockPercents(
         section.items[0].title,
         section.items[1].title,
-        section.items[2].title
+        section.items[2].title,
       );
 
       itemsHtml = `
@@ -297,7 +297,7 @@ export class AgendaRenderer {
       if (section.items.length > 3) {
         const remainingWidths = this.calculateBlockPercents(
           section.items[3].title,
-          ""
+          "",
         );
 
         itemsHtml += `
@@ -314,7 +314,7 @@ export class AgendaRenderer {
           if (pair.length === 2) {
             const widths = this.calculateBlockPercents(
               pair[0].title,
-              pair[1].title
+              pair[1].title,
             );
             return `
             <div class="flex flex-col md:flex-row w-full h-auto tablet:h-[252px] desktop:h-[490px] pair-container">
