@@ -5,7 +5,7 @@
  */
 
 // Asset version for cache busting - increment when deploying changes
-const ASSET_VERSION = "1";
+const ASSET_VERSION = Date.now();
 
 // BASE_PATH kept for backwards compatibility if used elsewhere
 const BASE_PATH = import.meta.env.BASE_PATH || "";
@@ -14,10 +14,10 @@ const BASE_PATH = import.meta.env.BASE_PATH || "";
  * Asset path helper - returns relative paths for portability
  *
  * @param {string} path - Asset path (e.g., /images/logo.svg)
- * @returns {string} - Relative asset path (e.g., ./images/logo.svg?v=1)
+ * @returns {string} - Relative asset path (e.g., ./images/logo.svg?v=1687699200000)
  *
  * @example
- * asset('/images/logo.svg') // Returns './images/logo.svg?v=1'
+ * asset('/images/logo.svg') // Returns './images/logo.svg?v=1687699200000'
  */
 export function asset(path) {
   // Convert to relative path for portability
