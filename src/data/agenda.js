@@ -82,7 +82,7 @@ export const agendaSections = [
           {
             name: "Sumit Amar",
             job: "API Development Expert",
-            company: "",
+            company: "WEX",
             avatar: asset("/images/speakers/Sumit.jpg"),
           },
         ],
