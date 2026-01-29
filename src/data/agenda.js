@@ -52,21 +52,15 @@ export const agendaSections = [
         time: "10:30",
         category: "OpenAPI Summit",
         title:
-          "The API-to-AI Pipeline: Building the Composable Backbone of AI-Ready Platforms",
+          "Coming Soon!",
         description:
-          "95% of all AI initiatives failed across organizations in 2025! Why? Lack of AI-readiness, underestimating the complexities of the AI value chain and treating MCP as the entire AI strategy! Yes, every organization wants to be “AI-ready,” but few realize that the journey starts long before the first LLM prompt is written — it begins with APIs and API management. However, rigid, inflexible, and proprietary API platforms only compound the problem since they can't keep up or cater to the evolving needs of the business. So, in this workshop, we’ll explore how open standards like OpenAPI, OAuth, and OpenTelemetry can help you build a composable API layer that’s secure, observable, and built for scale. We’ll then turn your APIs into AI-ready tools using the Model Context Protocol (MCP), connecting them to LLMs, data sources, and other services to create AI-native applications. Key takeaways: 1. Why APIs are the first step toward AI-readiness. 2. How OAS, OAuth, and Otel work together to build strong foundations. 3. What the Model Context Protocol (MCP) unlocks for developers building AI-native applications Expect practical examples, clear patterns, and a few “aha” moments about where APIs fit in the AI era.",
+          "Coming Soon!",
         speakers: [
           {
-            name: "Kuldeepak Angrish",
-            job: "Technology Leader",
-            company: "Tyk",
-            avatar: asset("/images/speakers/Kuldeepak.jpg"),
-          },
-          {
-            name: "Budhaditya Bhattacharya",
-            job: "Enterprise Architect",
-            company: "Tyk",
-            avatar: asset("/images/speakers/Budhaditya.jpg"),
+            name: "Henry Andrews",
+            company: "OpenAPI Initiative",
+            linkedin: "https://www.linkedin.com/in/handrews",
+            isOaiMember: true,
           },
         ],
       },
@@ -115,11 +109,11 @@ export const agendaSections = [
   {
     id: "afternoon-sessions",
     title: "Afternoon Sessions",
-    timeRange: "01:00 — 03:30",
+    timeRange: "1:00pm — 3:30pm",
     items: [
       {
         id: "6",
-        time: "13:00",
+        time: "1:00pm",
         category: "OpenAPI Summit",
         title:
           "Bridging SDKs, OpenAPI, and AI: A Unified Schema for LLM-Safe API Chunking",
@@ -136,7 +130,7 @@ export const agendaSections = [
       },
       {
         id: "7",
-        time: "13:30",
+        time: "1:30pm",
         category: "OpenAPI Summit",
         title: "Coming Soon!",
         description: "Coming Soon!",
@@ -152,7 +146,7 @@ export const agendaSections = [
       },
       {
         id: "8",
-        time: "14:00",
+        time: "2:00pm",
         category: "OpenAPI Summit",
         title: "APIs Weren't Built for AI: Now What?",
         description:
@@ -168,16 +162,24 @@ export const agendaSections = [
       },
       {
         id: "9",
-        time: "14:30",
+        time: "2:30pm",
         category: "OpenAPI Summit",
-        title: "Coming Soon!",
-        description: "Coming Soon!",
+        title:
+          "The API-to-AI Pipeline: Building the Composable Backbone of AI-Ready Platforms",
+        description:
+          "95% of all AI initiatives failed across organizations in 2025! Why? Lack of AI-readiness, underestimating the complexities of the AI value chain and treating MCP as the entire AI strategy! Yes, every organization wants to be “AI-ready,” but few realize that the journey starts long before the first LLM prompt is written — it begins with APIs and API management. However, rigid, inflexible, and proprietary API platforms only compound the problem since they can't keep up or cater to the evolving needs of the business. So, in this workshop, we’ll explore how open standards like OpenAPI, OAuth, and OpenTelemetry can help you build a composable API layer that’s secure, observable, and built for scale. We’ll then turn your APIs into AI-ready tools using the Model Context Protocol (MCP), connecting them to LLMs, data sources, and other services to create AI-native applications. Key takeaways: 1. Why APIs are the first step toward AI-readiness. 2. How OAS, OAuth, and Otel work together to build strong foundations. 3. What the Model Context Protocol (MCP) unlocks for developers building AI-native applications Expect practical examples, clear patterns, and a few “aha” moments about where APIs fit in the AI era.",
         speakers: [
           {
-            name: "Speaker Coming Soon",
-            job: "",
-            company: "",
-            avatar: "",
+            name: "Kuldeepak Angrish",
+            job: "Technology Leader",
+            company: "Tyk",
+            avatar: asset("/images/speakers/Kuldeepak.jpg"),
+          },
+          {
+            name: "Budhaditya Bhattacharya",
+            job: "Enterprise Architect",
+            company: "Tyk",
+            avatar: asset("/images/speakers/Budhaditya.jpg"),
           },
         ],
       },
