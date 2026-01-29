@@ -48,7 +48,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "4",
+        id: "3",
         time: "10:30",
         category: "OpenAPI Summit",
         title:
@@ -71,7 +71,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "5",
+        id: "4",
         time: "11:00",
         category: "OpenAPI Summit",
         title:
@@ -88,7 +88,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "6",
+        id: "5",
         time: "11:30",
         category: "OpenAPI Summit",
         title:
@@ -118,18 +118,7 @@ export const agendaSections = [
     timeRange: "01:00 — 03:30",
     items: [
       {
-        id: "7",
-        time: "12:00",
-        category: "Break",
-        title: "Lunch Break",
-        description:
-          "Grab lunch at the on-site concessions and use this time to mingle with our exhibitors. It’s a great opportunity to network, explore new products, and recharge before the afternoon sessions.",
-        speakers: [],
-        icon: asset("/images/break-fest.svg"),
-        disableHover: true,
-      },
-      {
-        id: "8",
+        id: "6",
         time: "13:00",
         category: "OpenAPI Summit",
         title:
@@ -146,7 +135,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "9",
+        id: "7",
         time: "13:30",
         category: "OpenAPI Summit",
         title: "Coming Soon!",
@@ -162,7 +151,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "10",
+        id: "8",
         time: "14:00",
         category: "OpenAPI Summit",
         title: "APIs Weren't Built for AI: Now What?",
@@ -178,7 +167,7 @@ export const agendaSections = [
         ],
       },
       {
-        id: "11",
+        id: "9",
         time: "14:30",
         category: "OpenAPI Summit",
         title: "Coming Soon!",
