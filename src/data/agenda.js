@@ -161,7 +161,7 @@ export const agendaSections = [
           {
             name: "Nuwan Dias",
             job: "API Platform Expert",
-            company: "",
+            company: "WSO2",
             avatar: asset("/images/speakers/Nuwan.jpg"),
           },
         ],
