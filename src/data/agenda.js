@@ -99,13 +99,13 @@ export const agendaSections = [
           {
             name: "Manideep Galala",
             job: "Enterprise Systems Architect",
-            company: "",
+            company: "Microsoft",
             avatar: asset("/images/speakers/Manideep.jpg"),
           },
           {
             name: "Aditya Tangirala",
             job: "Enterprise Systems Engineer",
-            company: "",
+            company: "Venmo",
             avatar: asset("/images/speakers/Aditya.jpg"),
           },
         ],
