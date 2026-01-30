@@ -17,7 +17,8 @@ export const agendaSections = [
         time: "09:30",
         category: "OpenAPI Summit",
         title: "Summit Welcome and OpenAPI in the Age of AI",
-        description: "Welcome to the OpenAPI Summit! We have an exciting program to share, with presentations talking about new specifications as well as presentations that dive into practices, applications, and an outlook of things are going. We also we have a brief look of where OpenAPI is situated in the age of AI and MCP, and how things are going to develop after the recent publication of version 3.2 of the specification.",
+        description:
+          "Welcome to the OpenAPI Summit! We have an exciting program to share, with presentations talking about new specifications as well as presentations that dive into practices, applications, and an outlook of things are going. We also we have a brief look of where OpenAPI is situated in the age of AI and MCP, and how things are going to develop after the recent publication of version 3.2 of the specification.",
         speakers: [
           {
             name: "Erik Wilde",
@@ -51,8 +52,7 @@ export const agendaSections = [
         id: "3",
         time: "10:30",
         category: "OpenAPI Summit",
-        title:
-          "What's new in OpenAPI 3.2?",
+        title: "What's new in OpenAPI 3.2?",
         description:
           "Come hear how and when to use the new features of the OpenAPI Specification 3.2! This talk will highlight AI-friendly features such as streaming media, structured tags, and improved examples, among other features. It will also include a brief look at areas we are researching for 3.3.",
         speakers: [
@@ -95,13 +95,13 @@ export const agendaSections = [
             name: "Manideep Galala",
             job: "Enterprise Systems Architect",
             company: "Microsoft",
-            avatar: asset("/images/speakers/Manideep.jpg"),
+            avatar: asset("/images/speakers/ManideepGalala.jpg"),
           },
           {
             name: "Aditya Tangirala",
             job: "Enterprise Systems Engineer",
             company: "Venmo",
-            avatar: asset("/images/speakers/Aditya.jpg"),
+            avatar: asset("/images/speakers/AdityaTangirala.jpg"),
           },
         ],
       },
