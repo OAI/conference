@@ -293,18 +293,40 @@ export class AgendaRenderer {
         </div>
       `;
 
-      // Render remaining item (item[3]) if exists
+      // Render remaining items (items[3] and beyond) if they exist
       if (section.items.length > 3) {
-        const remainingWidths = this.calculateBlockPercents(
-          section.items[3].title,
-          "",
-        );
+        const remainingItems = section.items.slice(3);
+        const remainingPairs = this.chunkIntoPairs(remainingItems);
 
-        itemsHtml += `
-          <div class="w-full">
-            ${this.renderAgendaItem(section.items[3], true)}
-          </div>
-        `;
+        const remainingPairsHtml = remainingPairs
+          .map((pair) => {
+            if (pair.length === 2) {
+              const widths = this.calculateBlockPercents(
+                pair[0].title,
+                pair[1].title,
+              );
+              return `
+              <div class="flex flex-col md:flex-row w-full h-auto tablet:h-[252px] desktop:h-[490px] pair-container">
+                <div class="pair-item-1" style="--width-desktop-xxl: ${widths.width1};">
+                  ${this.renderAgendaItem(pair[0])}
+                </div>
+                <div class="pair-item-2" style="--width-desktop-xxl: ${widths.width2};">
+                  ${this.renderAgendaItem(pair[1], true)}
+                </div>
+              </div>
+            `;
+            } else {
+              // Single item (odd number)
+              return `
+              <div class="w-full">
+                ${this.renderAgendaItem(pair[0], true)}
+              </div>
+            `;
+            }
+          })
+          .join("");
+
+        itemsHtml += remainingPairsHtml;
       }
     } else {
       // Other sections: pairs layout
