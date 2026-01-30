@@ -52,9 +52,9 @@ export const agendaSections = [
         time: "10:30",
         category: "OpenAPI Summit",
         title:
-          "Coming Soon!",
+          "What's new in OpenAPI 3.2?",
         description:
-          "Coming Soon!",
+          "Come hear how and when to use the new features of the OpenAPI Specification 3.2! This talk will highlight AI-friendly features such as streaming media, structured tags, and improved examples, among other features. It will also include a brief look at areas we are researching for 3.3.",
         speakers: [
           {
             name: "Henry Andrews",
