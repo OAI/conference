@@ -146,7 +146,7 @@ export class AgendaRenderer {
                 : `<div class="w-full h-full bg-primary-gray/20"></div>`
             }
           </div>
-          <div class="w-12 h-12 tablet:w-12 tablet:h-12 desktop-xxl:w-12 desktop-xxl:h-12 rounded-full overflow-hidden shrink-0 transition-all duration-300 group-hover:opacity-0 group-hover:-translate-x-full">
+          <div class="w-12 h-12 tablet:w-12 tablet:h-12 desktop-xxl:w-12 desktop-xxl:h-12 rounded-full overflow-hidden shrink-0">
             ${
               speakers[1].avatar
                 ? `<img src="${speakers[1].avatar}" alt="${speakers[1].name}" class="w-full h-full object-cover" />`
