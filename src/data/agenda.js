@@ -194,11 +194,11 @@ export const agendaSections = [
           "As API ecosystems grow, teams often struggle with fragmented tooling and inconsistent practices. This session explores how the OpenAPI Specification (OAS) brings order to API development by enabling standardized, interoperable, and vendor-agnostic tooling. We’ll examine how standards-based approaches improve automation, governance, and collaboration across the API lifecycle, and why they offer clear advantages over proprietary solutions. Through practical examples, the talk shows how OAS-driven tools help organizations reduce complexity, accelerate digital transformation, and build scalable API platforms without vendor lock-in.",
         speakers: [
           {
-            name: "Raúl Nogales",
-            job: "Founder & CEO",
+            name: "Rafael Ruiz",
+            job: "CTO",
             company: "101OBEX",
-            avatar: asset("/images/speakers/Raul.jpg"),
-            linkedin: "https://www.linkedin.com/in/raulnogales/",
+            avatar: asset("/images/speakers/Rafael.jpg"),
+            linkedin: "https://www.linkedin.com/in/juan-rafael-ruiz-carrillo-63595214b/",
           },
         ],
       },
