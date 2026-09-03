@@ -1,3 +1,11 @@
+> [!CAUTION]
+> This repository is deprecated in favor of [OAI/events.openapis.org](https://github.com/OAI/events.openapis.org). All content has been moved to a new location.
+
+
+<details>
+
+<summary>OLD Documentation</summary>
+
 # OpenAPI Conference website
 
 ## Prerequisites
@@ -51,3 +59,5 @@ dist/
 - `npm run build` - Build for production
 - `npm run preview` - Preview production build
 - `npm run clean` - Remove dist directory
+
+</details>
